@@ -51,6 +51,11 @@
   --radius-sm: 3px;
   --radius-md: 4px;
   --cut: 18px; /* угол среза для брутальных панелей */
+  --cut-sm: 14px; /* угол среза для карточек меню */
+
+  /* 3D interaction */
+  --tilt-max: 8deg;
+  --dur-slow: 12s;
 
   /* Shadow — жёсткая "наклейка", без размытия */
   --shadow-hard: 7px 7px 0 var(--color-ink);
@@ -141,6 +146,7 @@ h1, h2, h3{
   position: absolute;
   bottom: 0;
   left: 0;
+  will-change: background-position;
 }
 
 /* ---------- Buttons ---------- */
@@ -277,14 +283,65 @@ h1, h2, h3{
 }
 .hero__bg{
   position: absolute;
-  inset: 0;
+  top: -12%;
+  left: 0;
+  right: 0;
+  bottom: -12%;
   background:
     radial-gradient(ellipse at 15% 20%, rgba(255,90,31,0.16), transparent 55%),
     radial-gradient(ellipse at 85% 75%, rgba(46,168,214,0.14), transparent 55%),
     repeating-linear-gradient(100deg, rgba(238,242,241,0.035) 0 2px, transparent 2px 64px);
   z-index: 0;
+  will-change: transform;
 }
 .hero__inner{ position: relative; z-index: 1; }
+
+/* ---------- Hero rotor: continuous 3D-animated tread drum ---------- */
+.hero__rotor{
+  position: absolute;
+  top: 7%;
+  right: 4%;
+  width: 130px;
+  height: 130px;
+  perspective: 600px;
+  z-index: 0;
+  opacity: 0.55;
+  pointer-events: none;
+}
+.hero__rotor-tilt{
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(20deg);
+}
+.hero__rotor-ring{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotor-spin var(--dur-slow) linear infinite;
+  will-change: transform;
+}
+.hero__rotor-seg{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 58px;
+  margin: -29px 0 0 -6px;
+  background: var(--color-throttle);
+  transform: rotateY(calc(var(--i) * 30deg)) translateZ(58px);
+}
+.hero__rotor-seg:nth-child(3n+2){ background: var(--color-nitro); }
+.hero__rotor-seg:nth-child(3n){ background: var(--color-steel-light); }
+
+@keyframes rotor-spin{
+  to{ transform: rotateY(360deg); }
+}
+
+@media (max-width: 780px){
+  .hero__rotor{ display: none; }
+}
 .kicker{
   font-family: var(--font-mono);
   text-transform: uppercase;
@@ -385,17 +442,37 @@ h1, h2, h3{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--space-5);
+  perspective: 1400px;
 }
 .menu-card{
+  position: relative;
   background: var(--color-bg-alt);
   border: 1px solid var(--color-line);
   padding: var(--space-5);
   border-top: 3px solid var(--color-throttle);
-  transition: transform var(--dur-mid) var(--ease), border-color var(--dur-mid) var(--ease);
+  clip-path: polygon(0 0, calc(100% - var(--cut-sm)) 0, 100% var(--cut-sm), 100% 100%, 0 100%);
+  transform-style: preserve-3d;
+  transform: translateZ(var(--tilt-z, 0px)) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  box-shadow: var(--tilt-shadow, 4px 4px 0 var(--color-ink));
+  transition: transform var(--dur-mid) var(--ease), box-shadow var(--dur-mid) var(--ease), border-color var(--dur-mid) var(--ease);
+  will-change: transform;
+}
+.menu-card.is-tilting{
+  /* no transform-transition while actively tracking the cursor, only the reset is eased */
+  transition: box-shadow var(--dur-fast) var(--ease), border-color var(--dur-mid) var(--ease);
+}
+.menu-card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--glare-x, 50%) var(--glare-y, 50%), rgba(238,242,241,0.18), transparent 55%);
+  opacity: var(--glare-o, 0);
+  transition: opacity var(--dur-mid) var(--ease);
+  mix-blend-mode: screen;
 }
 .menu-card:nth-child(3n+2){ border-top-color: var(--color-nitro); }
 .menu-card:nth-child(3n+3){ border-top-color: var(--color-steel-light); }
-.menu-card:hover{ transform: translateY(-4px); }
 .menu-card__head{
   display: flex;
   align-items: baseline;
