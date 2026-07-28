@@ -156,6 +156,28 @@
     }
   }
 
+  /* ---------- Reviews tachometer: needle sweeps to the real 4.9 rating on scroll ---------- */
+  var reviewsGauge = document.getElementById("reviewsGauge");
+  if (reviewsGauge) {
+    if (reduceMotion || typeof IntersectionObserver !== "function") {
+      // No motion (or no observer support): jump straight to the correct reading.
+      reviewsGauge.classList.add("is-active");
+    } else {
+      var gaugeObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              reviewsGauge.classList.add("is-active");
+              gaugeObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.4 }
+      );
+      gaugeObserver.observe(reviewsGauge);
+    }
+  }
+
   /* ---------- If the user's motion preference changes at runtime, drop any inline tilt/parallax state ---------- */
   if (typeof reduceMotionQuery.addEventListener === "function") {
     reduceMotionQuery.addEventListener("change", function (event) {

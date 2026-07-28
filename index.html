@@ -96,7 +96,10 @@
 
   <!-- ===================== HERO ===================== -->
   <section class="hero" id="hero">
-    <div class="hero__bg" aria-hidden="true" data-parallax="bg"></div>
+    <div class="hero__bg" aria-hidden="true" data-parallax="bg">
+      <img class="hero__bg-img" src="https://images.unsplash.com/photo-1692317785388-a7d076077d9d?w=1920&amp;h=1200&amp;fit=crop&amp;q=68&amp;auto=format" alt="" width="1920" height="1200" fetchpriority="high" decoding="async">
+      <div class="hero__bg-overlay" aria-hidden="true"></div>
+    </div>
     <div class="hero__rotor" aria-hidden="true">
       <div class="hero__rotor-tilt">
         <div class="hero__rotor-ring">
@@ -117,7 +120,7 @@
     </div>
     <div class="wrap hero__inner">
       <p class="kicker">Концепт-кофейня · Таганский район, Москва</p>
-      <h1 class="hero__title">Мир кофе встречает&nbsp;<span class="hl">экстремальные виды спорта</span></h1>
+      <h1 class="hero__title">Мир кофе встречает <span class="hl">экстремальные виды спорта</span></h1>
       <p class="hero__lead">St.Riders Coffee — точка на карте Таганки для тех, кто пьёт эспрессо так же серьёзно, как относится к скорости. Спешелти-кофе, мотоэстетика в интерьере и атмосфера паддока вместо очередной кофейни у метро.</p>
 
       <div class="hero__meta">
@@ -155,19 +158,64 @@
         <h2 class="section-title">Кофе как питстоп между заездами</h2>
       </div>
 
+      <figure class="concept__strip">
+        <img src="https://images.unsplash.com/photo-1448641434006-6a836ed4856d?w=1600&amp;h=640&amp;fit=crop&amp;q=72&amp;auto=format" alt="Свежеобжаренные зёрна спешелти-кофе крупным планом — фактура, которую мы читаем как протектор" width="1600" height="640" loading="lazy" decoding="async">
+        <div class="concept__strip-overlay" aria-hidden="true"></div>
+        <figcaption>Зерно к зерну, виток к витку — один ритм</figcaption>
+      </figure>
+
       <div class="concept__body">
         <p>St.Riders Coffee родился на пересечении двух страстей: спешелти-кофе и мотоспорта. Мы не открывали «ещё одну кофейню у дома» — мы собрали пространство для тех, кто понимает, зачем нужен идеальный шот эспрессо перед выездом и почему обороты двигателя должны быть такими же чистыми, как экстракция в фильтре.</p>
         <p>Интерьер говорит на языке гаража и трека: приборные акценты вместо декоративных рамок, разметочные линии вместо орнаментов, чёткая геометрия вместо случайного уюта. Это не тематический ресторан «под мото» — это рабочее пространство бариста, спроектированное с той же строгостью, что и приборная панель гоночного болида.</p>
         <p>St.Riders Coffee растёт вместе с сообществом райдеров Таганки: здесь останавливаются перед и после заездов, встречаются команды, обсуждают маршруты и просто пьют хороший кофе без лишнего пафоса. Бренд молодой, амбициозный и точно знает, куда едет.</p>
       </div>
 
-      <div class="concept__card" role="note" aria-label="Программа лояльности Карта Райдера">
-        <div class="concept__card-top">
-          <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.6"/><path d="M6 15h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          <span class="tag">Карта Райдера</span>
+      <div class="concept__side">
+        <div class="concept__card" role="note" aria-label="Программа лояльности Карта Райдера">
+          <div class="concept__card-top">
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.6"/><path d="M6 15h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <span class="tag">Карта Райдера</span>
+          </div>
+          <p class="concept__card-title">−15% для своих</p>
+          <p class="concept__card-text">Программа лояльности для постоянных гостей: скидка 15% на весь чек. Карта оформляется у бариста при заказе — расскажем на месте, как получить.</p>
         </div>
-        <p class="concept__card-title">−15% для своих</p>
-        <p class="concept__card-text">Программа лояльности для постоянных гостей: скидка 15% на весь чек. Карта оформляется у бариста при заказе — расскажем на месте, как получить.</p>
+
+        <div class="concept__card concept__card--gauge" role="note" aria-label="Иллюстрация: спидометр крепости напитков">
+          <div class="concept__card-top">
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 12 L16 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/></svg>
+            <span class="tag">Приборная панель</span>
+          </div>
+          <p class="concept__card-title">Спидометр крепости</p>
+
+          <div class="concept__gauge" aria-hidden="true">
+            <svg class="concept__gauge-svg" viewBox="0 0 220 220">
+              <circle cx="110" cy="110" r="98" fill="none" stroke="var(--color-line)" stroke-width="2"/>
+              <circle cx="110" cy="110" r="74" fill="none" stroke="var(--color-steel)" stroke-width="1" stroke-dasharray="2 6" opacity="0.5"/>
+
+              <g transform="rotate(-110 110 110)"><g transform="translate(110,26)"><ellipse rx="6" ry="9" fill="var(--color-steel-light)"/><path d="M0,-7 C2,-3 2,3 0,7" stroke="var(--color-ink)" stroke-width="1" fill="none"/></g></g>
+              <g transform="rotate(-82.5 110 110)"><g transform="translate(110,26)"><ellipse rx="6" ry="9" fill="var(--color-steel-light)"/><path d="M0,-7 C2,-3 2,3 0,7" stroke="var(--color-ink)" stroke-width="1" fill="none"/></g></g>
+              <g transform="rotate(-55 110 110)"><g transform="translate(110,26)"><ellipse rx="6" ry="9" fill="var(--color-nitro)"/><path d="M0,-7 C2,-3 2,3 0,7" stroke="var(--color-ink)" stroke-width="1" fill="none"/></g></g>
+              <g transform="rotate(-27.5 110 110)"><g transform="translate(110,26)"><ellipse rx="6" ry="9" fill="var(--color-nitro)"/><path d="M0,-7 C2,-3 2,3 0,7" stroke="var(--color-ink)" stroke-width="1" fill="none"/></g></g>
+              <g transform="rotate(0 110 110)"><g transform="translate(110,26)"><ellipse rx="6" ry="9" fill="var(--color-paper-dim)"/><path d="M0,-7 C2,-3 2,3 0,7" stroke="var(--color-ink)" stroke-width="1" fill="none"/></g></g>
+              <g transform="rotate(27.5 110 110)"><g transform="translate(110,26)"><ellipse rx="6" ry="9" fill="var(--color-throttle)"/><path d="M0,-7 C2,-3 2,3 0,7" stroke="var(--color-ink)" stroke-width="1" fill="none"/></g></g>
+              <g transform="rotate(55 110 110)"><g transform="translate(110,26)"><ellipse rx="6" ry="9" fill="var(--color-throttle)"/><path d="M0,-7 C2,-3 2,3 0,7" stroke="var(--color-ink)" stroke-width="1" fill="none"/></g></g>
+              <g transform="rotate(82.5 110 110)"><g transform="translate(110,26)"><ellipse rx="6" ry="9" fill="var(--color-throttle-dark)"/><path d="M0,-7 C2,-3 2,3 0,7" stroke="var(--color-ink)" stroke-width="1" fill="none"/></g></g>
+              <g transform="rotate(110 110 110)"><g transform="translate(110,26)"><ellipse rx="6" ry="9" fill="var(--color-throttle-dark)"/><path d="M0,-7 C2,-3 2,3 0,7" stroke="var(--color-ink)" stroke-width="1" fill="none"/></g></g>
+
+              <g class="concept__gauge-needle">
+                <line x1="110" y1="110" x2="110" y2="34" stroke="var(--color-throttle)" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="110" cy="110" r="9" fill="var(--color-ink)" stroke="var(--color-throttle)" stroke-width="2"/>
+              </g>
+            </svg>
+            <span class="concept__gauge-steam"></span>
+            <span class="concept__gauge-steam"></span>
+            <span class="concept__gauge-steam"></span>
+            <span class="concept__gauge-label concept__gauge-label--min">мягко</span>
+            <span class="concept__gauge-label concept__gauge-label--max">редлайн</span>
+          </div>
+
+          <p class="concept__card-text">Зёрна на шкале расставлены по кругу, как протектор на шине: от мягкого фильтра до «Ред-флаг рафа» — каждый следующий напиток ближе к редлайну.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -289,20 +337,23 @@
       <div class="section-head section-head--center">
         <p class="eyebrow">Галерея</p>
         <h2 class="section-title">Визуальный ряд без единого клише</h2>
-        <p class="section-sub">Графика и текстуры вместо стоковых фото — фотосессия точки в разработке.</p>
+        <p class="section-sub">Настоящие фото точки и напитков вперемешку с фирменной графикой.</p>
       </div>
 
       <div class="gallery__grid">
-        <figure class="gallery-tile gallery-tile--tread">
-          <div class="gallery-tile__art" aria-hidden="true"></div>
+        <figure class="gallery-tile gallery-tile--photo">
+          <img class="gallery-tile__img" src="https://images.unsplash.com/photo-1634071257121-8cd59787ff1c?w=640&amp;h=480&amp;fit=crop&amp;q=70&amp;auto=format" alt="Протектор мотоциклетной шины и оранжевая цепь привода крупным планом" width="640" height="480" loading="lazy" decoding="async">
+          <div class="gallery-tile__overlay" aria-hidden="true"></div>
           <figcaption><span class="gallery-tile__code">G-01</span>Протектор</figcaption>
         </figure>
-        <figure class="gallery-tile gallery-tile--asphalt">
-          <div class="gallery-tile__art" aria-hidden="true"></div>
+        <figure class="gallery-tile gallery-tile--photo">
+          <img class="gallery-tile__img" src="https://images.unsplash.com/photo-1671730066274-24e05378a30c?w=640&amp;h=480&amp;fit=crop&amp;q=70&amp;auto=format" alt="Тёмный асфальт с двойной жёлтой разметкой трассы" width="640" height="480" loading="lazy" decoding="async">
+          <div class="gallery-tile__overlay" aria-hidden="true"></div>
           <figcaption><span class="gallery-tile__code">G-02</span>Разметка трассы</figcaption>
         </figure>
-        <figure class="gallery-tile gallery-tile--crema">
-          <div class="gallery-tile__art" aria-hidden="true"></div>
+        <figure class="gallery-tile gallery-tile--photo">
+          <img class="gallery-tile__img" src="https://images.unsplash.com/photo-1498241804937-a517467c0db6?w=640&amp;h=480&amp;fit=crop&amp;q=70&amp;auto=format" alt="Свежий шот эспрессо с плотной ореховой кремой в стакане" width="640" height="480" loading="lazy" decoding="async">
+          <div class="gallery-tile__overlay" aria-hidden="true"></div>
           <figcaption><span class="gallery-tile__code">G-03</span>Крема</figcaption>
         </figure>
         <figure class="gallery-tile gallery-tile--flag">
@@ -320,8 +371,9 @@
           </div>
           <figcaption><span class="gallery-tile__code">G-05</span>Тахометр</figcaption>
         </figure>
-        <figure class="gallery-tile gallery-tile--pit">
-          <div class="gallery-tile__art" aria-hidden="true"></div>
+        <figure class="gallery-tile gallery-tile--photo">
+          <img class="gallery-tile__img" src="https://images.unsplash.com/photo-1758593386033-cb1f842d550c?w=640&amp;h=480&amp;fit=crop&amp;q=70&amp;auto=format" alt="Профессиональная эспрессо-машина на баре — питстоп для бариста" width="640" height="480" loading="lazy" decoding="async">
+          <div class="gallery-tile__overlay" aria-hidden="true"></div>
           <figcaption><span class="gallery-tile__code">G-06</span>Питстоп-бар</figcaption>
         </figure>
       </div>
@@ -334,6 +386,25 @@
   <section class="section reviews" id="reviews">
     <div class="wrap reviews__inner">
       <div class="reviews__score">
+        <div class="reviews__gauge" id="reviewsGauge" aria-hidden="true">
+          <svg class="reviews__gauge-svg" viewBox="0 0 220 140">
+            <path class="reviews__gauge-track" d="M18 128 A92 92 0 0 1 202 128"/>
+            <path class="reviews__gauge-fill" d="M18 128 A92 92 0 0 1 202 128"/>
+            <g transform="rotate(-90 110 128)"><line x1="110" y1="36" x2="110" y2="50" stroke="var(--color-steel-light)" stroke-width="3"/></g>
+            <g transform="rotate(-67.5 110 128)"><line x1="110" y1="36" x2="110" y2="50" stroke="var(--color-steel-light)" stroke-width="3"/></g>
+            <g transform="rotate(-45 110 128)"><line x1="110" y1="36" x2="110" y2="50" stroke="var(--color-steel-light)" stroke-width="3"/></g>
+            <g transform="rotate(-22.5 110 128)"><line x1="110" y1="36" x2="110" y2="50" stroke="var(--color-steel-light)" stroke-width="3"/></g>
+            <g transform="rotate(0 110 128)"><line x1="110" y1="36" x2="110" y2="50" stroke="var(--color-nitro)" stroke-width="3"/></g>
+            <g transform="rotate(22.5 110 128)"><line x1="110" y1="36" x2="110" y2="50" stroke="var(--color-throttle)" stroke-width="3"/></g>
+            <g transform="rotate(45 110 128)"><line x1="110" y1="36" x2="110" y2="50" stroke="var(--color-throttle)" stroke-width="3"/></g>
+            <g transform="rotate(67.5 110 128)"><line x1="110" y1="36" x2="110" y2="50" stroke="var(--color-throttle-dark)" stroke-width="4"/></g>
+            <g transform="rotate(90 110 128)"><line x1="110" y1="36" x2="110" y2="50" stroke="var(--color-throttle-dark)" stroke-width="4"/></g>
+            <g class="reviews__needle">
+              <line x1="110" y1="128" x2="110" y2="46" stroke="var(--color-throttle)" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="110" cy="128" r="8" fill="var(--color-ink)" stroke="var(--color-throttle)" stroke-width="2"/>
+            </g>
+          </svg>
+        </div>
         <span class="reviews__number">4.9</span>
         <div class="reviews__stars" aria-hidden="true">
           <svg width="120" height="22" viewBox="0 0 120 22">
